@@ -66,12 +66,21 @@ body{
             .input:focus{
                 color:orange;
             } 
+                .input-wrapper{
+                    position:relative;
+                    .show-password{
+                        position:absolute;
+                        top:20%;
+                        right:0;
+                    }
+                }
                 input{
                     background-color: lighten(#000000, 10%);
                     border: 1px solid lighten($color: #000000, $amount: 20);
                     border-radius:0.2rem;
                     padding: 0.5rem;
                     color: white;
+                    width: 100%;
                 }
                 input:invalid{
                     border-color: red;
@@ -87,17 +96,19 @@ body{
             }
             
         }
-        button{
+        .button{
             background-color: lighten(#000000, 10%);
             border: 1px solid lighten($color: #000000, $amount: 20);
             border-radius:0.2rem;
             padding: 0.5rem;  
             color:white;
-            width: 50%;
+            width: 25%;
             margin:0 auto;
             font-size: large;
+            text-decoration: none;
+            text-align: center;
         }
-        button:hover{
+        .button:hover{
             border: 1px solid white;
             cursor: pointer;
         }

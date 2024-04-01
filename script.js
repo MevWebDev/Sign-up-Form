@@ -2,14 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     let passwordInput = document.querySelector('#user-password');
     passwordInput.addEventListener('input', function() {
         let passwordValue = this.value;
-        console.log(passwordValue);
         checkPassword();
     });
     let passwordInput2 = document.querySelector('#user-password2');
     passwordInput2.addEventListener('input', function() {
         let passwordValue2 = this.value;
         checkPassword();
-        console.log(passwordValue2);
     });
     
 });
@@ -26,4 +24,19 @@ function checkPassword(){
         passwordInput.style.border = '1px solid red';
         passwordInput2.style.border = '1px solid red';
     }
+}
+
+
+window.onload = function() {
+    const showPasswordButtons = document.querySelectorAll('.show-password');
+    showPasswordButtons.forEach((button) => {
+        button.addEventListener('click', (event) => {
+            const passwordInput = event.target.previousElementSibling;
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+            } else {
+                passwordInput.type = "password";
+            }
+        });
+    });
 }
